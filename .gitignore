@@ -10,8 +10,12 @@ __pycache__/
 *$py.class
 *.so
 *.egg-info/
-dist/
 build/
+
+# Node
+node_modules/
+dist/
+*.tgz
 
 # IDE
 .vscode/
@@ -25,3 +29,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Test files
+test_notification.py

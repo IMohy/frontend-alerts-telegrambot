@@ -1,0 +1,79 @@
+{
+  "name": "jahiz-tracker",
+  "version": "1.0.1",
+  "description": "Lightweight error tracking client that sends real-time notifications to Telegram via the Jahiz webhook.",
+  "author": "mohy",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/react/index.d.ts",
+        "default": "./dist/react/index.js"
+      },
+      "require": {
+        "types": "./dist/react/index.d.cts",
+        "default": "./dist/react/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohy/jahiztrackingbot",
+    "directory": "client-js"
+  },
+  "homepage": "https://www.npmjs.com/package/jahiz-tracker",
+  "bugs": {
+    "url": "https://github.com/mohy/jahiztrackingbot/issues"
+  },
+  "keywords": [
+    "error-tracking",
+    "telegram",
+    "webhook",
+    "react",
+    "error-boundary",
+    "monitoring",
+    "notifications",
+    "error-reporting",
+    "alerting",
+    "vite",
+    "nextjs",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0"
+  }
+}
