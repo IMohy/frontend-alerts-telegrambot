@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2026-02-16
+
+### Fixed
+- **Critical: Singleton instance not shared across entry points** -- `getJahizTracker()` in the React sub-package (`jahiz-tracker/react`) returned `null` because tsup duplicated the module-level `instance` variable into a separate bundle. The singleton is now stored on `globalThis`, guaranteeing a single shared instance regardless of how bundlers (Vite, Webpack, tsup) split or duplicate the code.
+
+### Changed
+- Updated repository and homepage URLs in package.json to point to correct GitHub repo
+
 ## [1.0.1] - 2026-02-16
 
 ### Added

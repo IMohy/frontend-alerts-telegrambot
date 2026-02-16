@@ -1,6 +1,6 @@
 {
   "name": "jahiz-tracker",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Lightweight error tracking client that sends real-time notifications to Telegram via the Jahiz webhook.",
   "author": "mohy",
   "license": "MIT",
@@ -41,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohy/jahiztrackingbot",
+    "url": "https://github.com/IMohy/frontend-alerts-telegrambot",
     "directory": "client-js"
   },
-  "homepage": "https://www.npmjs.com/package/jahiz-tracker",
+  "homepage": "https://github.com/IMohy/frontend-alerts-telegrambot#readme",
   "bugs": {
-    "url": "https://github.com/mohy/jahiztrackingbot/issues"
+    "url": "https://github.com/IMohy/frontend-alerts-telegrambot/issues"
   },
   "keywords": [
     "error-tracking",

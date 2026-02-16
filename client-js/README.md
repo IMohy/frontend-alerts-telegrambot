@@ -391,7 +391,7 @@ import type {
 
 This package is the **client SDK**. You also need the **Jahiz webhook server** running to receive reports and forward them to Telegram.
 
-See the [server repository](https://github.com/your-username/jahiztrackingbot) for setup instructions.
+See the [server repository](https://github.com/IMohy/frontend-alerts-telegrambot) for setup instructions.
 
 ---
 

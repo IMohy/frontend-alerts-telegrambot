@@ -349,24 +349,30 @@ class JahizTracker {
 }
 
 // ─── Singleton ───────────────────────────────────────────────────────
+// Stored on globalThis to guarantee a single instance even when bundlers
+// (e.g. tsup, Vite, Webpack) duplicate this module across entry points.
 
-let instance: JahizTracker | null = null;
+const GLOBAL_KEY = "__jahiz_tracker__" as const;
 
 /** Create and return the singleton tracker instance. */
 export function createJahizTracker(config: JahizConfig): JahizTracker {
-  instance = new JahizTracker(config);
-  instance.init();
-  return instance;
+  const tracker = new JahizTracker(config);
+  tracker.init();
+  (globalThis as Record<string, unknown>)[GLOBAL_KEY] = tracker;
+  return tracker;
 }
 
 /** Get the existing tracker instance. Throws if not initialized. */
 export function getJahizTracker(): JahizTracker {
-  if (!instance) {
+  const tracker = (globalThis as Record<string, unknown>)[
+    GLOBAL_KEY
+  ] as JahizTracker | undefined;
+  if (!tracker) {
     throw new Error(
       "[JahizTracker] Not initialized. Call createJahizTracker() first."
     );
   }
-  return instance;
+  return tracker;
 }
 
 export { JahizTracker };
