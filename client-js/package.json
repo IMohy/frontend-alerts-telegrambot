@@ -1,6 +1,6 @@
 {
   "name": "jahiz-tracker",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Lightweight error tracking client that sends real-time notifications to Telegram via the Jahiz webhook.",
   "author": "mohy",
   "license": "MIT",

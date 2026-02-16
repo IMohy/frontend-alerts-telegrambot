@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-02-16
+
+### Changed
+- **Zero-config setup** -- `webhookUrl` and `webhookSecret` now have built-in defaults. Users no longer need to provide them. Initialization is now as simple as `createJahizTracker({ appName: "My App" })` or even just `createJahizTracker()`
+
 ## [1.0.3] - 2026-02-16
 
 ### Fixed

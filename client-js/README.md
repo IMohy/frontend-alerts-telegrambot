@@ -28,15 +28,15 @@ npm install jahiz-tracker
 import { createJahizTracker } from "jahiz-tracker";
 
 createJahizTracker({
-  webhookUrl: "https://your-jahiz-server.com",
-  webhookSecret: "your-webhook-secret",
   appName: "My App",
   appVersion: "1.2.0",
   environment: "production",
 });
 ```
 
-That's it. All unhandled errors and unhandled promise rejections are now automatically reported to your Telegram.
+That's it. No URL or secret needed -- they're built in. All unhandled errors and unhandled promise rejections are now automatically reported to your Telegram.
+
+> You can still override `webhookUrl` and `webhookSecret` if you self-host the server.
 
 ### 2. Manually report errors
 
@@ -159,8 +159,8 @@ function CheckoutForm() {
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `webhookUrl` | `string` | **required** | Your Jahiz webhook server URL |
-| `webhookSecret` | `string` | **required** | Secret for authenticating with the webhook |
+| `webhookUrl` | `string` | built-in | Webhook server URL (defaults to hosted Jahiz instance) |
+| `webhookSecret` | `string` | built-in | Authentication secret (defaults to hosted Jahiz secret) |
 | `appName` | `string` | `undefined` | Application name (shown in Telegram messages) |
 | `appVersion` | `string` | `undefined` | Application version |
 | `environment` | `string` | `undefined` | e.g. `"production"`, `"staging"`, `"development"` |
@@ -199,8 +199,6 @@ Use `beforeSend` to drop or transform reports before they're sent:
 
 ```ts
 createJahizTracker({
-  webhookUrl: "https://your-server.com",
-  webhookSecret: "secret",
   beforeSend: (payload) => {
     // Don't report errors in development
     if (payload.environment === "development") return false;
@@ -253,8 +251,6 @@ import App from "./App";
 import { createJahizTracker } from "jahiz-tracker";
 
 createJahizTracker({
-  webhookUrl: import.meta.env.VITE_JAHIZ_URL,
-  webhookSecret: import.meta.env.VITE_JAHIZ_SECRET,
   appName: "My React App",
   appVersion: "1.0.0",
   environment: import.meta.env.MODE,
